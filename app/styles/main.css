@@ -114,6 +114,12 @@
   cursor: pointer;
 }
 
+.no_topscorers {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
 .back_button {
   position: relative;
   left: 15px;
