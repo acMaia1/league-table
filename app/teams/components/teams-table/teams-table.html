@@ -1,0 +1,95 @@
+<div ng-repeat="result in standings">
+    <div class="standing_title" ng-click="toggle.list = !toggle.list">{{result.name}}</div>
+    <table ng-show="toggle.list" class="standing_table">
+        <thead>
+            <tr>
+            <td>
+                <div class="standing__sort_key" ng-click="sortType = 'position'; sortReverse = !sortReverse">
+                    <div class="standing__list_title">Position
+                        <span ng-show="sortType == 'position' && !sortReverse" class="fa fa-caret-down"></span>
+                        <span ng-show="sortType == 'position' && sortReverse" class="fa fa-caret-up"></span>
+                    </div>
+                </div>
+            </td>
+            <td>
+                <div ng-click="sortType = 'team_name'; sortReverse = !sortReverse">
+                    <div class="standing__list_title">Team Name
+                        <span ng-show="sortType == 'team_name' && !sortReverse" class="fa fa-caret-down"></span>
+                        <span ng-show="sortType == 'team_name' && sortReverse" class="fa fa-caret-up"></span>
+                    </div>
+                </div>
+            </td>
+            <td>
+                <div ng-click="sortType = 'overall.games_played'; sortReverse = !sortReverse">
+                    <div class="standing__list_title">Played
+                        <span ng-show="sortType == 'overall.games_played' && !sortReverse" class="fa fa-caret-down"></span>
+                        <span ng-show="sortType == 'overall.games_played' && sortReverse" class="fa fa-caret-up"></span>
+                    </div>
+                </div>
+            </td>
+            <td>
+                <div ng-click="sortType = 'overall.won'; sortReverse = !sortReverse">
+                    <div class="standing__list_title">Won
+                        <span ng-show="sortType == 'overall.won' && !sortReverse" class="fa fa-caret-down"></span>
+                        <span ng-show="sortType == 'overall.won' && sortReverse" class="fa fa-caret-up"></span>
+                    </div>
+                </div>
+            </td>
+            <td>
+                <div ng-click="sortType = 'overall.draw'; sortReverse = !sortReverse">
+                    <div class="standing__list_title">Drawn
+                        <span ng-show="sortType == 'overall.draw' && !sortReverse" class="fa fa-caret-down"></span>
+                        <span ng-show="sortType == 'overall.draw' && sortReverse" class="fa fa-caret-up"></span>
+                    </div>
+                </div>
+            </td>
+            <td>
+                <div ng-click="sortType = 'overall.lost'; sortReverse = !sortReverse">
+                    <div class="standing__list_title">Lost
+                        <span ng-show="sortType == 'overall.lost' && !sortReverse" class="fa fa-caret-down"></span>
+                        <span ng-show="sortType == 'overall.lost' && sortReverse" class="fa fa-caret-up"></span>
+                    </div>
+                </div>
+            </td>
+            <td>
+                <div ng-click="sortType = 'overall.goals_scored'; sortReverse = !sortReverse">
+                    <div class="standing__list_title">Goal
+                        <span ng-show="sortType == 'overall.goals_scored' && !sortReverse" class="fa fa-caret-down"></span>
+                        <span ng-show="sortType == 'overall.goals_scored' && sortReverse" class="fa fa-caret-up"></span>
+                    </div>
+                </div>
+            </td>
+            <td>
+                <div ng-click="sortType = '-1*total.goal_difference'; sortReverse = !sortReverse">
+                    <div class="standing__list_title">Difference
+                        <span ng-show="sortType == '-1*total.goal_difference' && !sortReverse" class="fa fa-caret-down"></span>
+                        <span ng-show="sortType == '-1*total.goal_difference' && sortReverse" class="fa fa-caret-up"></span>
+                    </div>
+                </div>
+            </td>
+            <td>
+                <div ng-click="sortType = 'total.points'; sortReverse = !sortReverse">
+                    <div class="standing__list_title">Points
+                        <span ng-show="sortType == 'total.points' && !sortReverse" class="fa fa-caret-down"></span>
+                        <span ng-show="sortType == 'total.points' && sortReverse" class="fa fa-caret-up"></span>
+                    </div>
+                </div>
+            </td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="standing in result.standings.data | orderBy:sortType:sortReverse">
+                    {{standing}}
+                <td class="standing__result">{{standing.position}}</td>
+                <td class="standing__result click" ng-click="getTeamInfo(standing)">{{standing.team_name}}</td>
+                <td class="standing__result">{{standing.overall.games_played}}</td>
+                <td class="standing__result">{{standing.overall.won}}</td>
+                <td class="standing__result">{{standing.overall.draw}}</td>
+                <td class="standing__result">{{standing.overall.lost}}</td>
+                <td class="standing__result">{{standing.overall.goals_scored}}</td>
+                <td class="standing__result">{{standing.total.goal_difference}}</td>
+                <td class="standing__result">{{standing.total.points}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

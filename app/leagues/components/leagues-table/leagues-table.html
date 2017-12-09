@@ -1,0 +1,6 @@
+<div class="leagues" ng-repeat="league in leagues">
+    <div class="league_name" ng-click="toggle.list = !toggle.list">{{league.name}}</div>
+    <div ng-show="toggle.list">
+        <seasons-table league="league"></seasons-table>
+    </div>
+</div>

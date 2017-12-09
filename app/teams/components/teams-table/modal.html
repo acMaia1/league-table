@@ -1,0 +1,54 @@
+<div>
+    <i class="fa fa-times close_button" ng-click="close()" aria-hidden="true"></i>
+</div>
+<div ng-show="!isShowingPlayerDeatails">
+    <div class="team_logo">
+        <img src="{{team_info.logo_path}}">
+    </div>
+    <div class="player_container">
+        <div ng-repeat="player in players"  ng-click="showPlayerDetails(player)">
+            <img class="team_logo" src="{{player.image_path}}">
+            <span>{{player.common_name}}</span>
+        </div>
+    </div>
+</div>
+<div ng-show="isShowingPlayerDeatails">
+    <div>
+        <i class="fa fa-arrow-left back_button" ng-click="isShowingPlayerDeatails = !isShowingPlayerDeatails"></i>            
+    </div>
+    <div>
+        <div class="team_logo">
+            <img src="{{selectedPlayer.image_path}}">
+        </div>
+        <div class="player_info_container">
+            <div>
+                Fullname -
+                <span>{{selectedPlayer.fullname}}</span>
+            </div>
+            <div>
+                Nationality -
+                <span>{{selectedPlayer.nationality}}</span>
+            </div>
+            <div>
+                Birthdate -
+                <span>{{selectedPlayer.birthdate}}</span>
+            </div>
+            <div>
+                Birthcountry -
+                <span>{{selectedPlayer.birthcountry}}</span>
+            </div>
+            <div>
+                Birthplace - 
+                <span>{{selectedPlayer.birthplace}}</span>
+            </div>
+            <div>
+                Height -
+                <span>{{selectedPlayer.height}}</span>
+            </div>
+            <div>
+                Weight -
+                <span>{{selectedPlayer.weight}}</span>
+            </div>
+        </div>
+    </div>
+</div>

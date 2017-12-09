@@ -1,0 +1,45 @@
+{
+  "name": "league-table",
+  "version": "1.0.0",
+  "description": "Javascript application that displays a league table for a given league",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently 'lite-server' 'webpack'",
+    "test": "karma start karma.conf.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/acMaia1/league-table.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/acMaia1/league-table/issues"
+  },
+  "homepage": "https://github.com/acMaia1/league-table#readme",
+  "dependencies": {
+    "angular": "^1.6.7",
+    "angular-mocks": "^1.6.7",
+    "babel": "^6.23.0",
+    "lite-server": "^2.3.0",
+    "mocha": "^4.0.1",
+    "requirejs": "^2.3.5",
+    "webpack": "^3.10.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "concurrently": "^3.5.1",
+    "html-loader": "^0.5.1",
+    "install": "^0.10.2",
+    "jasmine": "^2.8.0",
+    "karma": "^1.7.1",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-es6-shim": "^1.0.0",
+    "karma-jasmine": "^1.1.1",
+    "karma-phantomjs-launcher": "^1.0.4",
+    "karma-requirejs": "^1.1.0",
+    "karma-webpack": "^2.0.6"
+  }
+}

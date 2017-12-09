@@ -1,0 +1,9 @@
+<div class="seasons" ng-repeat="season in seasons">
+    <div class="season_year">
+        <span class="season_year__title" ng-click="toggle.list = !toggle.list">{{season.name}}</span>
+        <div class="seasons_year__ball" ng-click="getTopscore(season)"></div>
+    </div>
+    <div ng-show="toggle.list">
+        <teams-table show="toggle.list" season="season"></teams-table>
+    </div>
+</div>
