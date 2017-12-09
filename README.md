@@ -3,12 +3,12 @@ Javascript application that displays a league table for a given league
 
 ## Before any build
 
-Run 'npm install'
+Run `npm install`
 
 ## Build & development
 
-Run 'npm start'
+Run `npm start`
 
 ## Testing
 
-Run 'npm run test'
+Run `npm run test`
